@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="One More Design — Fikirden pazara uçtan uca ürün tasarımı."
+    >
+
+    <title>One More Design</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="#"
+            class="navbar__logo"
+            aria-label="One More Design ana sayfa"
+        >
+            <img
+                src="./images/brand/onemore-white.svg"
+                alt="One More Design"
+            >
+        </a>
+
+
+        <!-- DESKTOP MENU -->
+
+        <nav
+            class="navbar__nav"
+            aria-label="Ana menü"
+        >
+
+            <a href="#projects">
+                Projeler
+            </a>
+
+            <a href="#services">
+                Hizmetler
+            </a>
+
+            <a href="#about">
+                Hakkımızda
+            </a>
+
+            <a href="#news">
+                Güncel
+            </a>
+
+            <a href="./iletisim.html">
+                İletişim
+            </a>
+
+        </nav>
+
+
+        <!-- DESKTOP RIGHT -->
+
+        <div class="navbar__actions">
+
+            <a
+                href="./iletisim.html"
+                class="navbar__cta"
+            >
+                Projenizi Konuşalım
+            </a>
+
+
+            <div class="navbar__social">
+
+                <!-- Instagram -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-3a1 1 0 100 2 1 1 0 000-2z"/>
+                    </svg>
+
+                </a>
+
+
+                <!-- LinkedIn -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M6.5 8.5H3.5V21h3V8.5zM5 3A1.75 1.75 0 105 6.5 1.75 1.75 0 005 3zM20.5 13.5c0-3.6-1.9-5.3-4.5-5.3-2.1 0-3 1.1-3.5 1.9V8.5h-3V21h3v-6.2c0-1.6.3-3.2 2.4-3.2 2 0 2.1 1.9 2.1 3.3V21h3.5v-7.5z"/>
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="navbar__toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Menüyü aç"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+        >
+
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <nav
+            class="mobile-menu__nav"
+            aria-label="Mobil menü"
+        >
+
+            <a href="#projects">
+                Projeler
+            </a>
+
+            <a href="#services">
+                Hizmetler
+            </a>
+
+            <a href="#about">
+                Hakkımızda
+            </a>
+
+            <a href="#news">
+                Güncel
+            </a>
+
+            <a href="./iletisim.html">
+                İletişim
+            </a>
+
+        </nav>
+
+
+        <div class="mobile-menu__bottom">
+
+            <a
+                href="./iletisim.html"
+                class="mobile-menu__cta"
+            >
+
+                <span>
+                    Projenizi Konuşalım
+                </span>
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+
+            <div class="mobile-menu__social">
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main>
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="hero">
+
+
+        <!-- VIDEO -->
+
+        <div class="hero__media">
+
+            <picture class="hero__poster" aria-hidden="true">
+                <source media="(max-width: 900px) and (orientation: portrait)" srcset="./images/posters/hero-mobile.jpg">
+                <img src="./images/posters/hero-desktop.jpg" alt="" fetchpriority="high">
+            </picture>
+            <video class="hero__video" id="heroVideo" muted loop playsinline preload="none"
+                aria-hidden="true" data-desktop="./videos/hero-desktop.mp4"
+                data-mobile="./videos/hero-mobile.mp4"></video>
+
+        </div>
+
+
+        <!-- VIDEO DARK OVERLAY -->
+
+        <div class="hero__overlay"></div>
+
+
+        <!-- HERO CONTENT -->
+
+        <div class="hero__content">
+
+
+            <!-- SMALL TEXT -->
+
+            <p class="hero__eyebrow">
+                Fikirden pazara.
+            </p>
+
+
+            <!-- BOTTOM -->
+
+            <div class="hero__bottom">
+
+
+                <!-- TITLE -->
+
+                <div class="hero__heading">
+
+                    <h1 class="hero__title">
+                        Uçtan uca
+                        <br>
+                        ürün tasarımı.
+                    </h1>
+
+                </div>
+
+
+                <!-- DESCRIPTION + CTA -->
+
+                <div class="hero__info">
+
+                    <p class="hero__description">
+
+                        One More Design; marka kimliğinden ürün tasarımına,
+                        prototiplemeden ambalaj ve görsel iletişime kadar
+                        ürün geliştirme sürecini tek çatı altında yönetir.
+
+                    </p>
+
+
+                    <div class="hero__actions">
+
+
+                        <a
+                            href="#projects"
+                            class="hero__button hero__button--primary"
+                        >
+
+                            <span>
+                                Projeleri İncele
+                            </span>
+
+                            <span class="hero__button-icon">
+                                ↓
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="./iletisim.html"
+                            class="hero__button hero__button--secondary"
+                        >
+
+                            <span>
+                                Projenizi Konuşalım
+                            </span>
+
+                            <span class="hero__button-icon">
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCROLL INDICATOR -->
+
+            <a
+                href="#projects"
+                class="hero__scroll"
+                aria-label="Projeleri keşfet"
+            >
+
+                <span>
+                    Keşfet
+                </span>
+
+                <span>
+                    ↓
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+   <!-- =========================================
+     SELECTED PROJECTS
+========================================= -->
+
+<!-- =========================================
+     SELECTED PROJECTS
+========================================= -->
+
+<section class="projects" id="projects">
+
+    <!-- HEADER -->
+
+    <div class="projects__header">
+
+        <div>
+
+            <span class="projects__label">
+                Seçilmiş Projeler
+            </span>
+
+            <h2 class="projects__title">
+                Tasarladığımız<br>
+                ürünler.
+            </h2>
+
+        </div>
+
+
+        <p class="projects__intro">
+            Farklı sektörlerde geliştirdiğimiz
+            seçili projeler.
+        </p>
+
+    </div>
+
+
+    <!-- PROJECT MOSAIC -->
+
+    <div class="projects__mosaic">
+
+
+        <!-- 01 -->
+
+        <a
+            href="./proje-ecopak.html"
+            class="project-tile project-tile--vision"
+        >
+
+            <img src="./images/projects/ecopak-1280.webp"
+                srcset="./images/projects/ecopak-640.webp 640w, ./images/projects/ecopak-1280.webp 1280w, ./images/projects/ecopak-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 60vw"
+                alt="Ecopak ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Ecopak</h3>
+
+                    <span>Robotik · Endüstriyel Tasarım</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- 02 -->
+
+        <a
+            href="./proje-robomation.html"
+            class="project-tile project-tile--robomation"
+        >
+
+            <img src="./images/projects/robomation-1280.webp"
+                srcset="./images/projects/robomation-640.webp 640w, ./images/projects/robomation-1280.webp 1280w, ./images/projects/robomation-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 40vw"
+                alt="Robomation ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Robomation</h3>
+
+                    <span>Robotik · Endüstriyel Tasarım</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- 03 -->
+
+        <a
+            href="./proje-kuver.html"
+            class="project-tile project-tile--kuver"
+        >
+
+            <img src="./images/projects/kuver-1280.webp"
+                srcset="./images/projects/kuver-640.webp 640w, ./images/projects/kuver-1280.webp 1280w, ./images/projects/kuver-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 40vw"
+                alt="Kuver Professional ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Kuver Professional</h3>
+
+                    <span>Ürün Tasarımı · Ürün Geliştirme</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- 04 -->
+
+        <a
+            href="./proje-zeron.html"
+            class="project-tile project-tile--zeron"
+        >
+
+            <img src="./images/projects/zeron-1280.webp"
+                srcset="./images/projects/zeron-640.webp 640w, ./images/projects/zeron-1280.webp 1280w, ./images/projects/zeron-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 40vw"
+                alt="Zeron Lock ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Zeron Lock</h3>
+
+                    <span>Ürün Tasarımı · Marka Tasarımı</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- 05 -->
+
+        <a
+            href="./proje-skyart.html"
+            class="project-tile project-tile--skyart"
+        >
+
+            <img src="./images/projects/skyart-1280.webp"
+                srcset="./images/projects/skyart-640.webp 640w, ./images/projects/skyart-1280.webp 1280w, ./images/projects/skyart-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 40vw"
+                alt="Skyart ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Skyart</h3>
+
+                    <span>Endüstriyel Tasarım · Ürün Geliştirme</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- 06 -->
+
+        <a
+            href="./proje-ecopak-trx.html"
+            class="project-tile project-tile--trx"
+        >
+
+            <img src="./images/projects/ecopak-trx-1280.webp"
+                srcset="./images/projects/ecopak-trx-640.webp 640w, ./images/projects/ecopak-trx-1280.webp 1280w, ./images/projects/ecopak-trx-1920.webp 1920w"
+                sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 100vw"
+                alt="Ecopak TRX ürün tasarımı" loading="lazy" decoding="async">
+
+            <div class="project-tile__overlay"></div>
+
+
+            <div class="project-tile__content">
+
+                <div>
+
+                    <h3>Ecopak TRX</h3>
+
+                    <span>Robotik · Endüstriyel Tasarım</span>
+
+                </div>
+
+
+                <span class="project-tile__arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="projects__footer">
+
+        <a
+            href="#projects"
+            class="projects__all"
+        >
+
+            <span>
+                Tüm Projeleri Gör
+            </span>
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     REFERENCES
+========================================= -->
+
+<section class="references">
+
+    <div class="references__header">
+
+        <span class="references__label">
+            Referanslar
+        </span>
+
+        <p class="references__intro">
+            Birlikte ürün geliştirdiğimiz markalardan bazıları.
+        </p>
+
+    </div>
+
+
+    <div class="references__grid">
+        <div class="reference-logo"><img src="./images/references/ecopak.png" alt="Ecopak" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/robomation.png" alt="Robomation" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/zeron.png" alt="Zeron" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/skyart.png" alt="Skyart" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/kuver.png" alt="Kuver Professional" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/jetchef-burger.png" alt="Jetchef Burger" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/dolka.png" alt="Dolka" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/quant-mecha.png" alt="Quant Mecha" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/inmotion.png" alt="inMotion Robotics" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/sinapstek.png" alt="Sinapstek" loading="lazy" decoding="async"></div>
+        <div class="reference-logo"><img src="./images/references/tmd.png" alt="TMD Security" loading="lazy" decoding="async"></div>
+    </div>
+
+</section>
+
+<!-- =========================================
+     END-TO-END DESIGN APPROACH
+========================================= -->
+
+<section
+    class="approach"
+    id="approach"
+>
+
+    <!-- HEADER -->
+
+    <div class="approach__header">
+
+        <div class="approach__heading">
+
+            <span class="approach__label">
+                Uçtan Uca Tasarım
+            </span>
+
+            <h2 class="approach__title">
+                Fikirden<br>
+                pazara.
+            </h2>
+
+        </div>
+
+
+        <div class="approach__intro">
+
+            <p>
+                Bir ürünün yalnızca nasıl göründüğünü değil;
+                nasıl doğduğunu, geliştirildiğini, üretildiğini
+                ve pazara nasıl çıktığını birlikte tasarlıyoruz.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         TIMELINE
+    ====================================== -->
+
+    <div
+        class="timeline"
+        id="designTimeline"
+    >
+
+        <!-- BACKGROUND LINE -->
+
+        <div
+            class="timeline__line"
+            aria-hidden="true"
+        >
+
+            <div
+                class="timeline__progress"
+                id="timelineProgress"
+            ></div>
+
+        </div>
+
+
+
+        <!-- 01 / FİKİR -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    01
+                </span>
+
+
+                <h3>
+                    Fikir
+                </h3>
+
+
+                <p>
+                    Araştırma ve fırsat alanları.
+                </p>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 02 / MARKA -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    02
+                </span>
+
+
+                <h3>
+                    Marka
+                </h3>
+
+
+                <p>
+                    İsim, kimlik ve görsel dil.
+                </p>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 03 / ÜRÜN -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    03
+                </span>
+
+
+                <h3>
+                    Ürün
+                </h3>
+
+
+                <p>
+                    Endüstriyel tasarım ve kullanıcı deneyimi.
+                </p>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 04 / GELİŞTİRME -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    04
+                </span>
+
+
+                <h3>
+                    Geliştirme
+                </h3>
+
+
+                <p>
+                    3D modelleme, prototipleme ve üretime hazırlık.
+                </p>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 05 / AMBALAJ -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    05
+                </span>
+
+
+                <h3>
+                    Ambalaj
+                </h3>
+
+
+                <p>
+                    Ürünün kullanıcıyla ilk fiziksel teması.
+                </p>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 06 / LANSMAN -->
+
+        <article
+            class="timeline__item"
+            data-timeline-item
+        >
+
+            <button
+                class="timeline__trigger"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <div class="timeline__point">
+                    <span></span>
+                </div>
+
+
+                <span class="timeline__number">
+                    06
+                </span>
+
+
+                <h3>
+                    Lansman
+                </h3>
+
+
+                <p>
+                    Render, animasyon, katalog ve sunum materyalleri.
+                </p>
+
+            </button>
+
+        </article>
+
+    </div>
+
+
+
+    <!-- BOTTOM MESSAGE -->
+
+    <div class="approach__footer">
+
+        <span>
+            Strateji
+        </span>
+
+        <div></div>
+
+        <span>
+            Üretim
+        </span>
+
+        <div></div>
+
+        <span>
+            Pazara Çıkış
+        </span>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section
+    class="services"
+    id="services"
+>
+
+    <div class="services__header">
+
+        <span class="services__label">
+            Hizmetler
+        </span>
+
+        <div class="services__heading">
+
+            <h2 class="services__title">
+                Fikirleri ürünlere<br>
+                dönüştürüyoruz.
+            </h2>
+
+            <p class="services__intro">
+                Stratejiden tasarıma, geliştirmeden lansmana kadar
+                ürünün ihtiyaç duyduğu tüm tasarım süreçlerini
+                tek çatı altında ele alıyoruz.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="services__grid">
+
+        <!-- 01 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    01
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Ürün Stratejisi<br>
+                    & Konsept
+                </h3>
+
+                <p>
+                    Araştırma, benchmark ve yeni ürün fikirleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- 02 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    02
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Endüstriyel<br>
+                    Tasarım
+                </h3>
+
+                <p>
+                    Form, ergonomi, kullanıcı deneyimi ve tasarım dili.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- 03 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    03
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Ürün<br>
+                    Geliştirme
+                </h3>
+
+                <p>
+                    3D modelleme, CMF, prototipleme ve üretime uygun tasarım.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- 04 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    04
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Marka<br>
+                    Tasarımı
+                </h3>
+
+                <p>
+                    Marka kimliği, logo ve görsel sistemler.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- 05 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    05
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Ambalaj<br>
+                    Tasarımı
+                </h3>
+
+                <p>
+                    Ürün ambalajı, etiket ve grafik tasarım.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- 06 -->
+
+        <a
+            href="#"
+            class="service-card"
+        >
+
+            <div class="service-card__top">
+
+                <span class="service-card__number">
+                    06
+                </span>
+
+                <span class="service-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+            <div class="service-card__content">
+
+                <h3>
+                    Görselleştirme<br>
+                    & İletişim
+                </h3>
+
+                <p>
+                    Render, animasyon, katalog, sunum ve lansman materyalleri.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="services__footer">
+
+        <a
+            href="#"
+            class="services__all"
+        >
+
+            <span>
+                Tüm Hizmetleri İncele
+            </span>
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SECTORS
+========================================= -->
+
+<section
+    class="sectors"
+    id="sectors"
+>
+
+    <div class="sectors__header">
+
+        <span class="sectors__label">
+            Sektörler
+        </span>
+
+
+        <div class="sectors__heading">
+
+            <h2 class="sectors__title">
+                Farklı sektörler.<br>
+                Aynı tasarım yaklaşımı.
+            </h2>
+
+            <p class="sectors__intro">
+                Farklı ihtiyaçlara sahip sektörlerde;
+                ürün, marka ve üretim süreçlerini
+                aynı bütüncül tasarım yaklaşımıyla ele alıyoruz.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         SECTOR GRID
+    ====================================== -->
+
+    <div class="sectors__grid">
+
+
+        <!-- 01 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    01
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Robotik &<br>
+                    Otomasyon
+                </h3>
+
+                <p>
+                    Akıllı üretim sistemleri, robotik ürünler
+                    ve otomasyon çözümleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 02 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    02
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Endüstriyel Ürünler<br>
+                    & Makineler
+                </h3>
+
+                <p>
+                    Üretim ekipmanları, makineler ve
+                    profesyonel kullanım ürünleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 03 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    03
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Medikal &<br>
+                    Laboratuvar
+                </h3>
+
+                <p>
+                    Kullanılabilirlik, ergonomi ve güven
+                    odaklı medikal ürün çözümleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 04 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    04
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Mobilite
+                </h3>
+
+                <p>
+                    Ulaşım, hareketlilik ve yeni nesil
+                    mobilite ürünleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 05 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    05
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Tarım<br>
+                    Teknolojileri
+                </h3>
+
+                <p>
+                    Tarımsal üretimi destekleyen makineler,
+                    ekipmanlar ve teknoloji ürünleri.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 06 -->
+
+        <a
+            href="#"
+            class="sector-card"
+        >
+
+            <div class="sector-card__top">
+
+                <span class="sector-card__number">
+                    06
+                </span>
+
+                <span class="sector-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="sector-card__bottom">
+
+                <h3>
+                    Teknoloji &<br>
+                    Tüketici Ürünleri
+                </h3>
+
+                <p>
+                    Günlük kullanım için geliştirilen
+                    fiziksel ve teknolojik ürünler.
+                </p>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     PROCESS
+========================================= -->
+
+<section class="process" id="process">
+
+    <div class="process__header">
+
+        <span class="process__label">
+            Çalışma Süreci
+        </span>
+
+        <div class="process__heading">
+
+            <h2 class="process__title">
+                Fikirden üretime<br>
+                kontrollü bir süreç.
+            </h2>
+
+            <p class="process__intro">
+                Her projeyi araştırmadan üretime kadar
+                net aşamalarla ilerletiyoruz.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="process__timeline">
+
+
+        <div class="process__line">
+            <div class="process__progress" id="processProgress"></div>
+        </div>
+
+
+        <!-- 01 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                01
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Araştır
+            </h3>
+
+            <p>
+                Kullanıcıyı, pazarı ve mevcut ürünleri analiz ediyoruz.
+            </p>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                02
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Keşfet
+            </h3>
+
+            <p>
+                Fırsat alanlarını belirliyor ve tasarım yönünü oluşturuyoruz.
+            </p>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                03
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Tasarla
+            </h3>
+
+            <p>
+                Konseptleri geliştiriyor, form ve kullanıcı deneyimini şekillendiriyoruz.
+            </p>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                04
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Geliştir
+            </h3>
+
+            <p>
+                3D modelleme, detaylandırma ve üretim kararlarını netleştiriyoruz.
+            </p>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                05
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Prototiple
+            </h3>
+
+            <p>
+                Tasarımı test ediyor, fiziksel ve işlevsel doğrulamalar yapıyoruz.
+            </p>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="process-step" data-process-step>
+
+            <span class="process-step__number">
+                06
+            </span>
+
+            <div class="process-step__point"></div>
+
+            <h3>
+                Üret
+            </h3>
+
+            <p>
+                Ürünü üretime hazırlıyor ve son uygulama detaylarını tamamlıyoruz.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div class="about__header">
+
+        <span class="about__label">
+            Hakkımızda
+        </span>
+
+        <h2 class="about__title">
+            Tasarım, teknoloji ve<br>
+            üretim arasında.
+        </h2>
+
+    </div>
+
+
+    <div class="about__grid">
+
+        <!-- IMAGE -->
+
+        <div class="about__media">
+
+            <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85"
+                alt="One More Design stüdyo çalışma alanı"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="about__content">
+
+            <div class="about__text">
+
+                <p class="about__lead">
+                    One More Design, yeni ürünler geliştiren markalar
+                    ve üreticiler için çalışan bağımsız bir
+                    endüstriyel tasarım stüdyosudur.
+                </p>
+
+
+                <p>
+                    Ürünü yalnızca görünüşüyle değil;
+                    markası, üretimi, kullanımı ve pazardaki
+                    konumuyla birlikte ele alır.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="about__cta"
+            >
+
+                <span>
+                    Hakkımızda
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     CURRENT / NEWS
+========================================= -->
+
+<section
+    class="current"
+    id="news"
+>
+
+    <div class="current__header">
+
+        <span class="current__label">
+            Güncel
+        </span>
+
+        <div class="current__heading">
+
+            <h2 class="current__title">
+                Stüdyodan,<br>
+                projelerden ve fikirlerden.
+            </h2>
+
+            <p class="current__intro">
+                Yeni projeler, ürün lansmanları ve
+                tasarım süreçlerine dair notlar.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTENT GRID
+    ====================================== -->
+
+    <div class="current__grid">
+
+
+        <!-- ITEM 01 -->
+
+        <a
+            href="#"
+            class="current-card current-card--large"
+        >
+
+            <div class="current-card__media">
+
+                <img
+                    src="./images/projects/ecopak-1280.webp"
+                    alt="Ecopak yeni ürün ailesi"
+                    loading="lazy"
+                >
+
+                <span class="current-card__type">
+                    Haber
+                </span>
+
+            </div>
+
+
+            <div class="current-card__content">
+
+                <div>
+
+                    <span class="current-card__date">
+                        2026
+                    </span>
+
+                    <h3>
+                        Ecopak yeni ürün ailesini tanıttı.
+                    </h3>
+
+                </div>
+
+
+                <span class="current-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ITEM 02 -->
+
+        <a
+            href="#"
+            class="current-card"
+        >
+
+            <div class="current-card__media">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85"
+                    alt="Nur Asansör Kirk Milano"
+                    loading="lazy"
+                >
+
+                <span class="current-card__type">
+                    Haber
+                </span>
+
+            </div>
+
+
+            <div class="current-card__content">
+
+                <div>
+
+                    <span class="current-card__date">
+                        2026
+                    </span>
+
+                    <h3>
+                        Nur Asansör Kirk Milano'da tanıtıldı.
+                    </h3>
+
+                </div>
+
+
+                <span class="current-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ITEM 03 -->
+
+        <a
+            href="#"
+            class="current-card"
+        >
+
+            <div class="current-card__media">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1200&q=85"
+                    alt="Endüstriyel tasarım süreci"
+                    loading="lazy"
+                >
+
+                <span class="current-card__type">
+                    Yazı
+                </span>
+
+            </div>
+
+
+            <div class="current-card__content">
+
+                <div>
+
+                    <span class="current-card__date">
+                        Tasarım Süreci
+                    </span>
+
+                    <h3>
+                        Endüstriyel tasarım süreci nasıl ilerler?
+                    </h3>
+
+                </div>
+
+
+                <span class="current-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ITEM 04 -->
+
+        <a
+            href="#"
+            class="current-card current-card--wide"
+        >
+
+            <div class="current-card__media">
+
+                <img
+                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=85"
+                    alt="Termoform ve enjeksiyon üretim yöntemleri"
+                    loading="lazy"
+                >
+
+                <span class="current-card__type">
+                    Yazı
+                </span>
+
+            </div>
+
+
+            <div class="current-card__content">
+
+                <div>
+
+                    <span class="current-card__date">
+                        Üretim
+                    </span>
+
+                    <h3>
+                        Termoform mu, enjeksiyon mu?
+                    </h3>
+
+                </div>
+
+
+                <span class="current-card__arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="current__footer">
+
+        <a
+            href="#"
+            class="current__all"
+        >
+
+            <span>
+                Tümünü Gör
+            </span>
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     FINAL CTA
+========================================= -->
+
+<section
+    class="final-cta"
+    id="contact"
+>
+
+    <div class="final-cta__inner">
+
+        <span class="final-cta__label">
+            Birlikte çalışalım
+        </span>
+
+
+        <div class="final-cta__content">
+
+            <h2 class="final-cta__title">
+                Yeni bir ürün mü<br>
+                geliştiriyorsunuz?
+            </h2>
+
+
+            <div class="final-cta__side">
+
+                <p class="final-cta__text">
+                    İlk fikirden üretime ve lansmana kadar
+                    birlikte çalışalım.
+                </p>
+
+
+                <a
+                    href="./iletisim.html"
+                    class="final-cta__button"
+                >
+                    <span>
+                        Projenizi Konuşalım
+                    </span>
+
+                    <span class="final-cta__arrow">
+                        ↗
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+</main>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <div class="footer__top">
+
+        <!-- BRAND -->
+
+        <div class="footer__brand">
+
+            <a
+                href="#"
+                class="footer__logo"
+                aria-label="One More Design ana sayfa"
+            >
+                <img src="./images/brand/onemore-white.svg" alt="One More Design" width="311" height="19" loading="lazy">
+            </a>
+
+            <p>
+                Fikirden pazara uçtan uca
+                ürün tasarımı.
+            </p>
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <div class="footer__column">
+
+            <span class="footer__column-title">
+                Projeler
+            </span>
+
+            <a href="#projects">
+                Tüm Projeler
+            </a>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="footer__column">
+
+            <span class="footer__column-title">
+                Hizmetler
+            </span>
+
+            <a href="#">
+                Ürün Stratejisi
+            </a>
+
+            <a href="#">
+                Endüstriyel Tasarım
+            </a>
+
+            <a href="#">
+                Ürün Geliştirme
+            </a>
+
+            <a href="#">
+                Marka Tasarımı
+            </a>
+
+            <a href="#">
+                Ambalaj Tasarımı
+            </a>
+
+            <a href="#">
+                Görselleştirme
+            </a>
+
+        </div>
+
+
+        <!-- SECTORS -->
+
+        <div class="footer__column">
+
+            <span class="footer__column-title">
+                Sektörler
+            </span>
+
+            <a href="#">
+                Robotik & Otomasyon
+            </a>
+
+            <a href="#">
+                Endüstriyel Ürünler
+            </a>
+
+            <a href="#">
+                Medikal & Laboratuvar
+            </a>
+
+            <a href="#">
+                Mobilite
+            </a>
+
+            <a href="#">
+                Tarım Teknolojileri
+            </a>
+
+            <a href="#">
+                Teknoloji Ürünleri
+            </a>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div class="footer__column">
+
+            <span class="footer__column-title">
+                One More Design
+            </span>
+
+            <a href="#about">
+                Hakkımızda
+            </a>
+
+            <a href="#news">
+                Güncel
+            </a>
+
+            <a href="./iletisim.html">
+                İletişim
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="footer__bottom">
+
+        <div class="footer__social">
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a href="mailto:hello@onemoredesign.com">
+                E-posta
+            </a>
+
+        </div>
+
+
+        <div class="footer__legal">
+
+            <a href="#">
+                Gizlilik Politikası
+            </a>
+
+            <a href="#">
+                Kullanım Şartları
+            </a>
+
+        </div>
+
+
+        <span class="footer__copyright">
+            © 2026 One More Design
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script src="./js/main.js"></script>
+
+</body>
+
+</html>
