@@ -5247,3 +5247,16 @@ span:last-child {
 .site-header.is-hidden { transform:translateY(-105%); opacity:0; pointer-events:none; }
 .site-header:focus-within,.menu-open .site-header { transform:translateY(0); opacity:1; pointer-events:auto; }
 @media(prefers-reduced-motion:reduce) { .site-header { transition:none; } }
+
+/* Five centered reference logos with a clear active brand. */
+.references__carousel { position:relative; width:100%; height:clamp(100px,14vw,200px); overflow:hidden; }
+.references__carousel .reference-logo { position:absolute; top:0; left:40%; width:20%; height:100%; padding:clamp(7px,2vw,28px); display:flex; align-items:center; justify-content:center; border:0; background:transparent; opacity:0; transform:translateX(300%); transition:transform .85s cubic-bezier(.22,.61,.36,1),filter .85s ease,opacity .85s ease; filter:blur(2px); }
+.references__carousel .reference-logo img { width:100%; height:100%; max-width:180px; max-height:90px; object-fit:contain; }
+.references__carousel .reference-logo.is-visible { opacity:.5; }
+.references__carousel .reference-logo.is-center { opacity:1; filter:blur(0); }
+.references__carousel .reference-logo.is-edge { opacity:.32; filter:blur(2.5px); }
+.references__controls { display:flex; justify-content:center; align-items:center; gap:18px; margin-top:22px; }
+.references__controls button { background:transparent; border:1px solid #aaa99e; color:inherit; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:17px; }
+.references__controls button:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+@media(max-width:600px) { .references__carousel .reference-logo { padding:7px; filter:blur(1px); } .references__carousel .reference-logo.is-edge { filter:blur(1.5px); } .references__carousel .reference-logo.is-center { filter:blur(0); } }
+@media(prefers-reduced-motion:reduce) { .references__carousel .reference-logo { transition:none; } }
