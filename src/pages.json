@@ -1,0 +1,151 @@
+[
+  {
+    "out": "index.html",
+    "slug": "index",
+    "title": "One More Design",
+    "description": "One More Design — Fikirden pazara uçtan uca ürün tasarımı.",
+    "body_class": "",
+    "data_project": "",
+    "styles": [
+      "style.css"
+    ],
+    "scripts": [
+      "main.js",
+      "references.js"
+    ],
+    "home_href": "#",
+    "section_prefix": ""
+  },
+  {
+    "out": "proje-ecopak.html",
+    "slug": "proje-ecopak",
+    "title": "Ecopak — One More Design",
+    "description": "Yeşil gövde, keskin yüzey geçişleri ve öne çıkan teknik detaylar. Ecopak ürününün görsel kimliğini yakından keşfedin.",
+    "body_class": "inner-page",
+    "data_project": "ecopak",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "proje-ecopak-trx.html",
+    "slug": "proje-ecopak-trx",
+    "title": "Ecopak TRX — One More Design",
+    "description": "Alçak siluet, belirgin yüzeyler ve yeşil gövde. Ecopak TRX’in ürün karakterini oluşturan tasarım detaylarını keşfedin.",
+    "body_class": "inner-page",
+    "data_project": "ecopak-trx",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "proje-kuver.html",
+    "slug": "proje-kuver",
+    "title": "Kuver Professional — One More Design",
+    "description": "Renk, malzeme ve formun buluştuğu bir ürün dünyası. Kuver Professional koleksiyonunu tanımlayan detaylara yakından bakın.",
+    "body_class": "inner-page",
+    "data_project": "kuver",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "proje-robomation.html",
+    "slug": "proje-robomation",
+    "title": "Robomation — One More Design",
+    "description": "Mor ve beyazın karşıtlığıyla şekillenen bir robotik ürün yaklaşımı. Teknik bileşenler, belirgin bir ürün kimliğiyle bir araya geliyor.",
+    "body_class": "inner-page",
+    "data_project": "robomation",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "proje-skyart.html",
+    "slug": "proje-skyart",
+    "title": "Skyart — One More Design",
+    "description": "Kırmızı çerçeve, geniş şeffaf yüzeyler ve yatay bir siluet. Skyart projesinde ölçek ile ürün kimliğinin birlikteliğini inceleyin.",
+    "body_class": "inner-page",
+    "data_project": "skyart",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "proje-zeron.html",
+    "slug": "proje-zeron",
+    "title": "Zeron Lock — One More Design",
+    "description": "Ekran, tuş takımı ve gövde tek bir yüzeyde buluşuyor. Zeron Lock, teknoloji ile fiziksel etkileşimi aynı ürün üzerinde ele alıyor.",
+    "body_class": "inner-page",
+    "data_project": "zeron",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-media.js",
+      "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "iletisim.html",
+    "slug": "iletisim",
+    "title": "İletişim — One More Design",
+    "description": "Yeni ürün ve marka projeleriniz için One More Design ile iletişime geçin.",
+    "body_class": "inner-page",
+    "data_project": "",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "contact.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  }
+]

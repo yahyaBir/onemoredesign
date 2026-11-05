@@ -16,17 +16,19 @@ Altı proje kartı: Ecopak, Robomation, Kuver Professional, Zeron Lock, Skyart v
 
 Yerel çalıştırma: proje klasöründe `python3 -m http.server 8000`, ardından `http://localhost:8000`.
 
+Sayfa iskeleti `src/` altındaki partial ve içerik dosyalarından üretilir. Düzenleme sonrası `python3 build.py` çalıştırın; ayrıntılar için `README.md` dosyasına bakın.
+
 
 ## Ürün detayları ve iletişim
 
-- `proje-ecopak.html`, `proje-robomation.html`, `proje-kuver.html`, `proje-zeron.html`, `proje-skyart.html`, `proje-ecopak-trx.html`: altı detay sayfası; genel görünüm, tasarım odağı, sonraki proje ve iletişim bağlantısı.
+- `proje-ecopak.html`, `proje-robomation.html`, `proje-kuver.html`, `proje-zeron.html`, `proje-skyart.html`, `proje-ecopak-trx.html`: altı detay sayfası; kapak, genel görünüm, tasarım odağı, galeri, proje filmi ve iletişim bağlantısı.
 - `iletisim.html`: iletişim bilgileri ve proje briefi formu.
 - `css/pages.css`: yeni sayfaların responsive stilleri.
 - `js/contact.js`: form doğrulama, e-posta taslağı ve brief kopyalama.
 
 İletişim formu sunucuya gönderim yapmaz. Kullanıcının e-posta uygulamasında taslak açar; gönderimi kullanıcı tamamlar. Kopyalama başarısız olursa seçilebilir metin gösterilir. Mevcut sitedeki `hello@onemoredesign.com` kullanılmıştır; yayından önce adresin doğruluğunu kontrol edin. Doğrudan gönderim istenirse ayrıca bir form servisi/API bağlanmalıdır. Adres, telefon, müşteri sonuçları veya teknik ürün özellikleri eklenmemiştir.
 
-Kontroller: yerel dosya ve sayfa bağlantıları, fragment hedefleri, JavaScript sözdizimi; proje adıyla form doldurma, e-posta metni kodlaması, kopyalama ve boşluk doğrulaması. Bu çalışma ortamında kullanılabilir tarayıcı olmadığından ekran görüntüsüyle görsel kontrol yapılamadı.
+Kontroller: `python3 build.py --check` ve `python3 scripts/check_site.py`; yerel dosya ve sayfa bağlantıları, fragment hedefleri, görsel ölçüleri, JavaScript davranışı ve form doğrulaması. Görsel kontrol Chrome ile masaüstü ve mobil ekran görüntüleri üzerinden yapılmıştır.
 
 ## Ürün detay sayfalarının medya alanları
 `js/project-media.js` dosyasında her ürün için dosya yollarını değiştirin:
@@ -36,7 +38,7 @@ Kontroller: yerel dosya ve sayfa bağlantıları, fragment hedefleri, JavaScript
 - `video`: ürün videosunun MP4/WebM yolu. Boş bırakıldığında “Video yakında” görünür.
 - `poster`: videonun kapak görseli.
 
-Yeni görseller gelene kadar aynı ürün görseli tekrar kullanılmaktadır. Galeri fotoğrafları `object-fit: contain` ile kırpılmadan gösterilir; çerçeveler ekran yüksekliğine göre sınırlandırılır. Üst kapak görseli ise tam alanı doldurmak için `cover` kullanır. Ana sayfa tanıtım videosu ürün videosu olarak kullanılmamıştır.
+Yeni görseller gelene kadar aynı ürün görseli tekrar kullanılmaktadır. `project-media.js` 640/1280/1920 piksel `srcset` sürümlerini otomatik kullanır. Galeri fotoğrafları `object-fit: contain` ile kırpılmadan gösterilir; çerçeveler ekran yüksekliğine göre sınırlandırılır. Üst kapak görseli ise tam alanı doldurmak için `cover` kullanır. Ana sayfa tanıtım videosu ürün videosu olarak kullanılmamıştır. Yayınlanan hero videoları H.264, sessiz ve fast-start olarak sıkıştırılmıştır; kaynak dosyalar `videos/originals/` altında tutulur ve deploy dışında bırakılmalıdır.
 
 Slider 5 saniyede bir ilerler; fare üzerindeyken, klavye odağı içindeyken, sekme gizliyken veya slider ekran dışındayken otomatik geçiş durur. Duraklatma düğmesi bulunur; hareket azaltma tercihi açıkken otomatik geçiş kapalıdır. Navbar aşağı kaydırmada gizlenir, yukarı kaydırmada görünür.
 
