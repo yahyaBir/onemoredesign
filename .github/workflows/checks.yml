@@ -1,0 +1,26 @@
+name: Site checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Generated HTML is current
+        run: python3 build.py --check
+      - name: Links, fragments, IDs and image metadata
+        run: python3 scripts/check_site.py
+      - name: JavaScript syntax
+        run: |
+          node --check js/main.js
+          node --check js/contact.js
+          node --check js/project.js
+          node --check js/project-media.js
+          node --check js/project-previews.js
+          node --check js/references.js

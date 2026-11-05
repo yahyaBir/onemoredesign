@@ -82,6 +82,17 @@ def main() -> int:
             if f'id="{value}"' not in text:
                 errors.append(f"{page.name}: aria-controls target missing: {value}")
 
+        for value in re.findall(r'(?:data-(?:desktop|mobile|src)|poster)="([^"]+)"', text):
+            target = local_path(page, value)
+            if target and not target.exists():
+                errors.append(f"{page.name}: missing media {value}")
+
+    media_config = (ROOT / "js/project-media.js")
+    if media_config.exists():
+        for value in set(re.findall(r'"(\./(?:images|videos)/[^"]+)"', media_config.read_text(encoding="utf-8"))):
+            if not (ROOT / value[2:]).exists():
+                errors.append(f"project-media.js: missing file {value}")
+
     if errors:
         print("Site check failed:")
         for error in errors:

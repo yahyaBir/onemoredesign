@@ -11,6 +11,7 @@
     ],
     "scripts": [
       "main.js",
+      "project-previews.js",
       "references.js"
     ],
     "home_href": "#",
@@ -19,8 +20,8 @@
   {
     "out": "proje-ecopak.html",
     "slug": "proje-ecopak",
-    "title": "Ecopak — One More Design",
-    "description": "Yeşil gövde, keskin yüzey geçişleri ve öne çıkan teknik detaylar. Ecopak ürününün görsel kimliğini yakından keşfedin.",
+    "title": "Ecopak X Vision 2000 — One More Design",
+    "description": "Güneş enerjisi sistemlerinin verimliliğini korumak için tasarlanan otonom solar panel temizleme robotu.",
     "body_class": "inner-page",
     "data_project": "ecopak",
     "styles": [
@@ -58,7 +59,7 @@
     "out": "proje-kuver.html",
     "slug": "proje-kuver",
     "title": "Kuver Professional — One More Design",
-    "description": "Renk, malzeme ve formun buluştuğu bir ürün dünyası. Kuver Professional koleksiyonunu tanımlayan detaylara yakından bakın.",
+    "description": "Mutfak şefi ve orkestra şefi benzerliğinden ilham alan Kuver Professional marka ve ambalaj tasarımı.",
     "body_class": "inner-page",
     "data_project": "kuver",
     "styles": [
@@ -77,7 +78,7 @@
     "out": "proje-robomation.html",
     "slug": "proje-robomation",
     "title": "Robomation — One More Design",
-    "description": "Mor ve beyazın karşıtlığıyla şekillenen bir robotik ürün yaklaşımı. Teknik bileşenler, belirgin bir ürün kimliğiyle bir araya geliyor.",
+    "description": "Robomation ürün ailesi için geliştirilen işlev odaklı ikon ve katalog sistemi.",
     "body_class": "inner-page",
     "data_project": "robomation",
     "styles": [
@@ -115,7 +116,7 @@
     "out": "proje-zeron.html",
     "slug": "proje-zeron",
     "title": "Zeron Lock — One More Design",
-    "description": "Ekran, tuş takımı ve gövde tek bir yüzeyde buluşuyor. Zeron Lock, teknoloji ile fiziksel etkileşimi aynı ürün üzerinde ele alıyor.",
+    "description": "Zeron Lock; estetik, dayanıklılık ve kolay etkileşimi tek bir ürün tasarımında buluşturuyor.",
     "body_class": "inner-page",
     "data_project": "zeron",
     "styles": [
@@ -126,6 +127,58 @@
       "main.js",
       "project-media.js",
       "project.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "projeler.html",
+    "slug": "projeler",
+    "title": "Projeler — One More Design",
+    "description": "One More Design projelerini tam ekran video hikâyeleriyle keşfedin.",
+    "body_class": "projects-page",
+    "data_project": "",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js",
+      "project-list.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "hakkimizda.html",
+    "slug": "hakkimizda",
+    "title": "Hakkımızda — One More Design",
+    "description": "One More Design; ürün tasarımı, geliştirme ve üretim arasında çalışan endüstriyel tasarım stüdyosu.",
+    "body_class": "inner-page about-page",
+    "data_project": "",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js"
+    ],
+    "home_href": "./index.html",
+    "section_prefix": "./index.html"
+  },
+  {
+    "out": "guncel.html",
+    "slug": "guncel",
+    "title": "Güncel — One More Design",
+    "description": "One More Design stüdyosundan, projelerinden ve tasarım süreçlerinden güncel notlar.",
+    "body_class": "inner-page news-page",
+    "data_project": "",
+    "styles": [
+      "style.css",
+      "pages.css"
+    ],
+    "scripts": [
+      "main.js"
     ],
     "home_href": "./index.html",
     "section_prefix": "./index.html"

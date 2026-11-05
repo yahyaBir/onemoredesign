@@ -13,11 +13,9 @@
     const counter = slider.querySelector('[data-counter]');
     const prevButton = slider.querySelector('[data-prev]');
     const nextButton = slider.querySelector('[data-next]');
-    const toggleButton = slider.querySelector('[data-autoplay]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     let current = 0;
-    let paused = reducedMotion.matches;
     let visible = false;
     let hovering = false;
     let timer = null;
@@ -47,7 +45,6 @@
         clearTimeout(timer);
 
         if (
-            paused ||
             reducedMotion.matches ||
             !visible ||
             hovering ||
@@ -65,15 +62,6 @@
         current = (index + slides.length) % slides.length;
         setCounter();
         scrollToSlide(current);
-    }
-
-    function renderToggle() {
-        if (!toggleButton) return;
-
-        const isPaused = paused || reducedMotion.matches;
-        toggleButton.textContent = isPaused ? '▷' : 'Ⅱ';
-        toggleButton.setAttribute('aria-label', isPaused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi duraklat');
-        toggleButton.disabled = reducedMotion.matches;
     }
 
     slides.forEach((slide, index) => {
@@ -107,14 +95,6 @@
         setCounter();
         restartAutoplay();
     }, { passive: true });
-
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            paused = !paused;
-            renderToggle();
-            restartAutoplay();
-        });
-    }
 
     slider.addEventListener('mouseenter', () => {
         hovering = true;
@@ -155,15 +135,11 @@
 
     if (typeof reducedMotion.addEventListener === 'function') {
         reducedMotion.addEventListener('change', () => {
-            renderToggle();
             restartAutoplay();
         });
     } else if (typeof reducedMotion.addListener === 'function') {
         reducedMotion.addListener(() => {
-            renderToggle();
             restartAutoplay();
         });
     }
-
-    renderToggle();
 })();

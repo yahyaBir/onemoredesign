@@ -33,7 +33,7 @@ python3 build.py --check      # generated HTML is current
 python3 scripts/check_site.py # links, fragments, IDs, image dimensions, ARIA controls
 ```
 
-`scripts/check_site.py` uses only the Python standard library and is suitable for CI.
+`scripts/check_site.py` uses only the Python standard library and is suitable for CI. The GitHub Actions workflow in `.github/workflows/checks.yml` runs the build check, the site check and JavaScript syntax checks.
 
 ## Structure
 
@@ -42,6 +42,7 @@ python3 scripts/check_site.py # links, fragments, IDs, image dimensions, ARIA co
 - `js/main.js`: mobile menu, header scrolling, hero video and both timelines.
 - `js/project.js`: project gallery slider.
 - `js/project-media.js`: per-project image/video configuration.
+- `js/project-previews.js`: lazy homepage tile video previews.
 - `js/references.js`: reference carousel with a static no-JS grid fallback.
 - `js/contact.js`: form validation, mail draft and clipboard fallback.
 

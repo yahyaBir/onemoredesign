@@ -4,21 +4,11 @@ from __future__ import annotations
 
 import hashlib
 import json
-import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
-ASSET_FILES = [
-    "css/style.css",
-    "css/pages.css",
-    "js/main.js",
-    "js/contact.js",
-    "js/project-media.js",
-    "js/project.js",
-    "js/references.js",
-]
 
 
 def asset_version(rel_path: str) -> str:
@@ -39,9 +29,9 @@ def build_page(page: dict, header: str, footer: str, layout: str) -> str:
             "{{footer}}": footer,
             "{{main}}": (SRC / "pages" / f'{page["slug"]}.main.html').read_text(encoding="utf-8").rstrip(),
             "{{home_href}}": page["home_href"],
-            "{{projects_href}}": page["section_prefix"] + "#projects" if page["section_prefix"] else "#projects",
-            "{{about_href}}": page["section_prefix"] + "#about" if page["section_prefix"] else "#about",
-            "{{news_href}}": page["section_prefix"] + "#news" if page["section_prefix"] else "#news",
+            "{{projects_href}}": page.get("projects_href", "./projeler.html"),
+            "{{about_href}}": page.get("about_href", "./hakkimizda.html"),
+            "{{news_href}}": page.get("news_href", "./guncel.html"),
         }
         for key, value in replacements.items():
             text = text.replace(key, value)

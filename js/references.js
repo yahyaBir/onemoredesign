@@ -13,7 +13,6 @@
 
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = Math.min(2, logos.length - 1);
-    let paused = false;
     let visible = false;
     let hovered = false;
     let timer = null;
@@ -30,21 +29,18 @@
     controls.className = 'references__controls';
 
     const prevButton = button('Önceki referans', '←');
-    const pauseButton = button('Otomatik geçişi duraklat', 'Ⅱ');
     const nextButton = button('Sonraki referans', '→');
 
     prevButton.dataset.prev = '';
-    pauseButton.dataset.pause = '';
     nextButton.dataset.next = '';
 
-    controls.append(prevButton, pauseButton, nextButton);
+    controls.append(prevButton, nextButton);
     carousel.after(controls);
 
     function schedule() {
         clearTimeout(timer);
 
         if (
-            paused ||
             motion.matches ||
             !visible ||
             hovered ||
@@ -69,11 +65,6 @@
             logo.setAttribute('aria-hidden', String(Math.abs(offset) > 2));
         });
 
-        const isPaused = paused || motion.matches;
-        pauseButton.textContent = isPaused ? '▷' : 'Ⅱ';
-        pauseButton.setAttribute('aria-label', isPaused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi duraklat');
-        pauseButton.disabled = motion.matches;
-
         schedule();
     }
 
@@ -84,11 +75,6 @@
 
     prevButton.addEventListener('click', () => move(-1));
     nextButton.addEventListener('click', () => move(1));
-    pauseButton.addEventListener('click', () => {
-        paused = !paused;
-        render();
-    });
-
     section.addEventListener('mouseenter', () => {
         hovered = true;
         schedule();
@@ -105,9 +91,9 @@
     window.addEventListener('pagehide', () => clearTimeout(timer));
 
     if (typeof motion.addEventListener === 'function') {
-        motion.addEventListener('change', render);
+        motion.addEventListener('change', schedule);
     } else if (typeof motion.addListener === 'function') {
-        motion.addListener(render);
+        motion.addListener(schedule);
     }
 
     if ('IntersectionObserver' in window) {

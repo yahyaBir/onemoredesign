@@ -982,7 +982,8 @@ video {
 
 /* IMAGE */
 
-.project-tile > img {
+.project-tile > img,
+.project-tile > video {
     position: absolute;
 
     inset: 0;
@@ -1004,6 +1005,21 @@ video {
         transform
         0.9s
         cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-tile > video {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.project-tile > video.is-playing {
+    opacity: 1;
+}
+
+.project-tile--trx > img {
+    object-fit: contain;
+    padding: 24px 4% 70px;
 }
 
 /* =========================================
@@ -1108,7 +1124,8 @@ video {
 
 @media (hover: hover) {
 
-    .project-tile:hover > img {
+    .project-tile:hover > img,
+    .project-tile:hover > video {
         transform: scale(1.035);
     }
 
@@ -1129,6 +1146,11 @@ video {
             translateX(6px);
     }
 
+}
+
+.project-tile:focus-visible > img,
+.project-tile:focus-visible > video {
+    transform: scale(1.035);
 }
 
 /* =========================================
@@ -2565,8 +2587,11 @@ video {
 
     font-size: 13px;
 
-    color:
-        rgba(17, 17, 17, 0.62);
+    color: var(--color-accent-deep);
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
 }
 
 .current__heading {
@@ -2619,11 +2644,11 @@ video {
     display: grid;
 
     grid-template-columns:
-        repeat(12, minmax(0, 1fr));
+        repeat(2, minmax(0, 1fr));
 
     gap:
-        clamp(45px, 5vw, 80px)
-        clamp(18px, 2vw, 32px);
+        clamp(44px, 5vw, 72px)
+        clamp(22px, 3vw, 42px);
 }
 
 /* =========================================
@@ -2631,22 +2656,9 @@ video {
 ========================================= */
 
 .current-card {
-    grid-column:
-        span 5;
-
     display: block;
 
     color: var(--color-ink);
-}
-
-.current-card--large {
-    grid-column:
-        span 7;
-}
-
-.current-card--wide {
-    grid-column:
-        5 / span 8;
 }
 
 /* =========================================
@@ -2658,21 +2670,11 @@ video {
 
     width: 100%;
 
-    aspect-ratio: 1.35 / 1;
+    aspect-ratio: 1.45 / 1;
 
     overflow: hidden;
 
     background: var(--color-surface-muted);
-}
-
-.current-card--large
-.current-card__media {
-    aspect-ratio: 1.55 / 1;
-}
-
-.current-card--wide
-.current-card__media {
-    aspect-ratio: 1.7 / 1;
 }
 
 .current-card__media img {
@@ -2700,16 +2702,17 @@ video {
         8px
         12px;
 
-    border-radius: var(--radius-pill);
+    background: rgba(17, 17, 17, 0.76);
 
-    background:
-        rgba(255, 255, 255, 0.92);
+    color: var(--color-paper);
 
-    color: var(--color-ink);
-
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
 }
 
 /* =========================================
@@ -2718,6 +2721,8 @@ video {
 
 .current-card__content {
     padding-top: 18px;
+
+    border-top: 1px solid var(--color-line-faint);
 
     display: flex;
 
@@ -2735,8 +2740,11 @@ video {
 
     font-size: 11px;
 
-    color:
-        rgba(17, 17, 17, 0.62);
+    color: var(--color-accent-deep);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
 }
 
 .current-card h3 {
@@ -2747,7 +2755,7 @@ video {
     font-size:
         clamp(21px, 2vw, 32px);
 
-    font-weight: 500;
+    font-weight: 400;
 
     line-height: 1.08;
 
@@ -2875,15 +2883,8 @@ span:last-child {
         max-width: 500px;
     }
 
-    .current-card,
-    .current-card--large {
-        grid-column:
-            span 6;
-    }
-
-    .current-card--wide {
-        grid-column:
-            span 12;
+    .current__grid {
+        gap: 42px 24px;
     }
 
 }
@@ -2924,12 +2925,8 @@ span:last-child {
         gap: 52px;
     }
 
-    .current-card__media,
-    .current-card--large
-    .current-card__media,
-    .current-card--wide
     .current-card__media {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 1.25 / 1;
     }
 
     .current-card h3 {
@@ -3544,7 +3541,6 @@ span:last-child {
 .hero__video { opacity: 0; transition: opacity .3s ease; }
 .hero__video.is-playing { opacity: 1; }
 .project-tile--trx { background: var(--color-surface-trx); }
-.project-tile--trx > img { object-fit: contain; padding: 24px 4% 70px; }
 .reference-logo img { width: 100%; height: auto; max-width: 150px; max-height: 65px; opacity: .8; }
 @media (prefers-reduced-motion: reduce) { .hero__video { transition: none; } }
 
