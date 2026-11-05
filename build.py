@@ -40,7 +40,6 @@ def build_page(page: dict, header: str, footer: str, layout: str) -> str:
             "{{main}}": (SRC / "pages" / f'{page["slug"]}.main.html').read_text(encoding="utf-8").rstrip(),
             "{{home_href}}": page["home_href"],
             "{{projects_href}}": page["section_prefix"] + "#projects" if page["section_prefix"] else "#projects",
-            "{{services_href}}": page["section_prefix"] + "#services" if page["section_prefix"] else "#services",
             "{{about_href}}": page["section_prefix"] + "#about" if page["section_prefix"] else "#about",
             "{{news_href}}": page["section_prefix"] + "#news" if page["section_prefix"] else "#news",
         }

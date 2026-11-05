@@ -332,13 +332,4 @@
         interactive: true
     });
 
-    initTimeline({
-        root: document.querySelector('.process'),
-        progress: document.getElementById('processProgress'),
-        itemSelector: '[data-process-step]',
-        triggerSelector: null,
-        delay: 200,
-        threshold: 0.25,
-        interactive: false
-    });
 })();
