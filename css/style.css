@@ -28,8 +28,8 @@
     --color-choice-active: #1a1a18;
     --color-paper-hover: #ededed;
     --color-surface-muted: #ddddda;
-    --color-surface-trx: #e6e6df;
-    --color-ink-deep: #111111;
+    --color-surface-trx: #20251f;
+    --color-ink-deep: #181818;
     --color-ink-media: #1a1a1a;
     --font-sans: Arial, Helvetica, sans-serif;
     --page-gutter: clamp(24px, 3.2vw, 64px);
