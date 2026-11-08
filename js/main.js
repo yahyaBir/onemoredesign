@@ -15,6 +15,124 @@
         }
     }
 
+    /* Smooth wheel input with a short inertial tail; native touch scrolling stays untouched. */
+    function initInertialScroll() {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const rootStyle = document.documentElement.style;
+        let targetY = window.scrollY;
+        let frame = null;
+        let previousBehavior = '';
+        let previousBehaviorPriority = '';
+
+        function restoreScrollBehavior() {
+            if (previousBehavior) {
+                rootStyle.setProperty('scroll-behavior', previousBehavior, previousBehaviorPriority);
+            } else {
+                rootStyle.removeProperty('scroll-behavior');
+            }
+            previousBehavior = '';
+            previousBehaviorPriority = '';
+        }
+
+        function stop() {
+            if (frame !== null) {
+                cancelAnimationFrame(frame);
+                restoreScrollBehavior();
+            }
+            frame = null;
+            targetY = window.scrollY;
+        }
+
+        function canScrollInside(event, delta) {
+            const path = typeof event.composedPath === 'function'
+                ? event.composedPath()
+                : [event.target];
+
+            for (const element of path) {
+                if (!(element instanceof HTMLElement)) continue;
+                if (element === document.body || element === document.documentElement) break;
+                if (element.matches('input, textarea, select, [contenteditable="true"], [data-native-scroll]')) {
+                    return true;
+                }
+
+                const overflowY = window.getComputedStyle(element).overflowY;
+                if (!/(auto|scroll|overlay)/.test(overflowY) || element.scrollHeight <= element.clientHeight + 1) {
+                    continue;
+                }
+
+                const canScrollUp = element.scrollTop > 0;
+                const canScrollDown = element.scrollTop + element.clientHeight < element.scrollHeight - 1;
+                if ((delta < 0 && canScrollUp) || (delta > 0 && canScrollDown)) return true;
+            }
+
+            return false;
+        }
+
+        function animate(timestamp) {
+            const currentY = window.scrollY;
+            const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+            targetY = Math.max(0, Math.min(targetY, maxY));
+            const difference = targetY - currentY;
+
+            if (Math.abs(difference) < 0.6) {
+                window.scrollTo(0, targetY);
+                frame = null;
+                restoreScrollBehavior();
+                return;
+            }
+
+            const elapsed = Math.min(50, Math.max(1, timestamp - (animate.lastTimestamp || timestamp - 16)));
+            animate.lastTimestamp = timestamp;
+            const progress = 1 - Math.exp(-elapsed / 190);
+            window.scrollTo(0, currentY + difference * progress);
+            frame = requestAnimationFrame(animate);
+        }
+
+        function onWheel(event) {
+            const useNativeScroll =
+                reducedMotion.matches ||
+                document.body.classList.contains('menu-open') ||
+                event.defaultPrevented ||
+                event.ctrlKey ||
+                Math.abs(event.deltaY) < Math.abs(event.deltaX) ||
+                canScrollInside(event, event.deltaY);
+            if (useNativeScroll) {
+                if (frame !== null) stop();
+                return;
+            }
+
+            let delta = event.deltaY;
+            if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) delta *= 16;
+            else if (event.deltaMode === WheelEvent.DOM_DELTA_PAGE) delta *= window.innerHeight;
+
+            const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+            const startY = frame === null ? window.scrollY : targetY;
+            const nextY = Math.max(0, Math.min(startY + delta, maxY));
+            if (Math.abs(nextY - startY) < 0.5) return;
+
+            event.preventDefault();
+            targetY = nextY;
+
+            if (frame === null) {
+                previousBehavior = rootStyle.getPropertyValue('scroll-behavior');
+                previousBehaviorPriority = rootStyle.getPropertyPriority('scroll-behavior');
+                rootStyle.setProperty('scroll-behavior', 'auto', 'important');
+                animate.lastTimestamp = 0;
+                frame = requestAnimationFrame(animate);
+            }
+        }
+
+        window.addEventListener('wheel', onWheel, { passive: false });
+        window.addEventListener('pointerdown', stop, { passive: true });
+        window.addEventListener('keydown', stop, { passive: true });
+        window.addEventListener('pagehide', stop, { once: true });
+        onMediaChange(reducedMotion, (event) => {
+            if (event.matches) stop();
+        });
+    }
+
+    initInertialScroll();
+
     /* =========================================
        MOBILE MENU
     ========================================= */

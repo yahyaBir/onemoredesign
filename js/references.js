@@ -73,16 +73,16 @@
         render();
     }
 
+    function updateHover() {
+        hovered = carousel.matches(':hover') || controls.matches(':hover');
+        schedule();
+    }
+
     prevButton.addEventListener('click', () => move(-1));
     nextButton.addEventListener('click', () => move(1));
-    section.addEventListener('mouseenter', () => {
-        hovered = true;
-        schedule();
-    });
-
-    section.addEventListener('mouseleave', () => {
-        hovered = false;
-        schedule();
+    [carousel, controls].forEach((element) => {
+        element.addEventListener('mouseenter', updateHover);
+        element.addEventListener('mouseleave', updateHover);
     });
 
     section.addEventListener('focusin', schedule);
