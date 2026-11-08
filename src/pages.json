@@ -26,12 +26,14 @@
     "data_project": "ecopak",
     "styles": [
       "style.css",
-      "pages.css"
+      "pages.css",
+      "project-viewer.css"
     ],
     "scripts": [
       "main.js",
       "project-media.js",
-      "project.js"
+      "project.js",
+      "product-viewer.js"
     ],
     "home_href": "./index.html",
     "section_prefix": "./index.html"
