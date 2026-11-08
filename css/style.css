@@ -2,6 +2,42 @@
    DESIGN TOKENS
 ========================================= */
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/inter-latin-ext-400.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/inter-latin-400.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500 600;
+    font-display: swap;
+    src: url('../assets/fonts/manrope-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500 600;
+    font-display: swap;
+    src: url('../assets/fonts/manrope-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
     --color-ink: #111111;
     --color-ink-soft: #171717;
@@ -30,7 +66,8 @@
     --color-surface-trx: #20251f;
     --color-ink-deep: #181818;
     --color-ink-media: #1a1a1a;
-    --font-sans: Arial, Helvetica, sans-serif;
+    --font-display: 'Manrope', Arial, Helvetica, sans-serif;
+    --font-sans: 'Inter', Arial, Helvetica, sans-serif;
     --page-gutter: clamp(24px, 3.2vw, 64px);
     --radius-pill: 100px;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -302,15 +339,11 @@ video {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.45);
+        rgba(255, 255, 255, 0.62);
 
-    border-radius: var(--radius-pill);
+    border-radius: 999px;
 
-    background:
-        rgba(0, 0, 0, 0.05);
-
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.12);
 
     font-size: 13px;
 
@@ -321,8 +354,7 @@ video {
     transition:
         background-color 0.25s ease,
         color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+        border-color 0.25s ease;
 }
 
 .navbar__cta:hover {
@@ -332,7 +364,6 @@ video {
 
     color: var(--color-ink);
 
-    transform: translateY(-1px);
 }
 
 /* =========================================
@@ -392,8 +423,11 @@ video {
     border: 0;
 
     background: transparent;
+    color: var(--color-paper);
 
     cursor: pointer;
+
+    transition: color 0.25s ease;
 }
 
 .navbar__toggle span {
@@ -404,11 +438,12 @@ video {
     width: 26px;
     height: 1px;
 
-    background: var(--color-paper);
+    background: currentColor;
 
     transition:
         top 0.35s ease,
-        transform 0.35s ease;
+        transform 0.35s ease,
+        background-color 0.25s ease;
 }
 
 .navbar__toggle span:first-child {
@@ -510,6 +545,10 @@ video {
     line-height: 1;
 
     letter-spacing: -0.05em;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .mobile-menu__bottom {
@@ -530,6 +569,10 @@ video {
         rgba(255, 255, 255, 0.4);
 
     font-size: 16px;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .mobile-menu__social {
@@ -759,8 +802,7 @@ video {
     transition:
         background-color 0.3s ease,
         border-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+        color 0.3s ease;
 }
 
 .hero__button-icon {
@@ -784,8 +826,6 @@ video {
 
 .hero__button--primary:hover {
     background: var(--color-paper-hover);
-
-    transform: translateY(-2px);
 }
 
 .hero__button--primary:hover
@@ -803,10 +843,7 @@ video {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.38);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+        rgba(255, 255, 255, 0.62);
 }
 
 .hero__button--secondary:hover {
@@ -816,7 +853,6 @@ video {
     border-color:
         rgba(255, 255, 255, 0.8);
 
-    transform: translateY(-2px);
 }
 
 .hero__button--secondary:hover
@@ -2845,6 +2881,10 @@ video {
         rgba(17, 17, 17, 0.6);
 
     font-size: 17px;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .current__all span:last-child {
@@ -3077,7 +3117,7 @@ span:last-child {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.45);
+        rgba(255, 255, 255, 0.78);
 
     border-radius: var(--radius-pill);
 
@@ -3090,8 +3130,7 @@ span:last-child {
     transition:
         background-color 0.35s ease,
         color 0.35s ease,
-        border-color 0.35s ease,
-        transform 0.35s ease;
+        border-color 0.35s ease;
 }
 
 .final-cta__arrow {
@@ -3128,8 +3167,6 @@ span:last-child {
         color: var(--color-ink);
 
         border-color: var(--color-paper);
-
-        transform: translateY(-3px);
     }
 
     .final-cta__button:hover
@@ -3255,7 +3292,7 @@ span:last-child {
 
     grid-template-columns:
         minmax(240px, 1.4fr)
-        repeat(4, minmax(140px, 1fr));
+        repeat(3, minmax(140px, 1fr));
 
     gap:
         clamp(35px, 4vw, 75px);
@@ -3296,6 +3333,17 @@ span:last-child {
 
     color:
         rgba(255, 255, 255, 0.56);
+}
+
+.footer__contact p {
+    max-width: 280px;
+
+    margin: 0 0 5px;
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.56);
 }
 
 /* =========================================
@@ -3377,16 +3425,13 @@ span:last-child {
 .footer__bottom {
     padding-top: 24px;
 
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        auto
-        auto;
+    display: flex;
 
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    gap: 35px;
+    gap: 16px 35px;
 
     border-top:
         1px solid
@@ -3398,38 +3443,28 @@ span:last-child {
         rgba(255, 255, 255, 0.56);
 }
 
-/* =========================================
-   SOCIAL
-========================================= */
-
 .footer__social {
     display: flex;
-
-    gap: 24px;
+    align-items: center;
+    gap: 10px;
 }
 
-.footer__social a,
-.footer__legal a {
-    color:
-        rgba(255, 255, 255, 0.60);
+.footer__social-icon {
+    width: 36px;
+    height: 36px;
 
-    transition:
-        color 0.25s ease;
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.72);
 }
 
-.footer__social a:hover,
-.footer__legal a:hover {
-    color: var(--color-paper);
-}
-
-/* =========================================
-   LEGAL
-========================================= */
-
-.footer__legal {
-    display: flex;
-
-    gap: 22px;
+.footer__social-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 .footer__copyright {
@@ -3463,11 +3498,7 @@ span:last-child {
             1 / -1;
     }
 
-    .footer__bottom {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
+    .footer__bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
 
     .footer__copyright {
         white-space: normal;
@@ -3524,15 +3555,6 @@ span:last-child {
         padding-top: 22px;
     }
 
-    .footer__social,
-    .footer__legal {
-        flex-wrap: wrap;
-
-        gap:
-            12px
-            20px;
-    }
-
 }
 
 /* Local media: keep the original composition and brand proportions. */
@@ -3559,9 +3581,103 @@ span:last-child {
 .references__carousel.is-ready .reference-logo.is-center { opacity:1; filter:blur(0); }
 .references__carousel.is-ready .reference-logo.is-edge { opacity:.32; filter:blur(2.5px); }
 .references__controls { display:flex; justify-content:center; align-items:center; gap:18px; margin-top:22px; }
-.references__controls button { background:transparent; border:1px solid var(--color-line-mid); color:inherit; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:17px; }
+.references__controls button { background:transparent; border:1px solid var(--color-line-mid); color:inherit; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:17px; transition:color .25s ease,background-color .25s ease,border-color .25s ease; }
 .references__controls button:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
 @media(max-width:1000px) { .references__carousel { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media(max-width:650px) { .references__carousel { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:600px) { .references__carousel.is-ready .reference-logo { padding:7px; filter:blur(1px); } .references__carousel.is-ready .reference-logo.is-edge { filter:blur(1.5px); } .references__carousel.is-ready .reference-logo.is-center { filter:blur(0); } }
 @media(prefers-reduced-motion:reduce) { .references__carousel.is-ready .reference-logo { transition:none; } }
+
+/* Clear color feedback for the remaining interactive controls. */
+.mobile-menu__nav a:is(:hover, :focus-visible, :active),
+.mobile-menu__cta:is(:hover, :focus-visible, :active) {
+    color: var(--color-accent-pale);
+}
+
+.mobile-menu__nav a:is(:hover, :focus-visible, :active),
+.mobile-menu__cta:is(:hover, :focus-visible, :active) {
+    border-color: var(--color-accent-pale);
+}
+
+.current__all:is(:hover, :focus-visible, :active) {
+    color: var(--color-accent-deep);
+}
+
+.about__cta:is(:hover, :focus-visible, :active) {
+    color: var(--color-accent-pale);
+}
+
+.references__controls button:is(:hover, :focus-visible, :active) {
+    border-color: var(--color-accent-deep);
+    background: var(--color-accent-deep);
+    color: var(--color-paper);
+}
+
+.navbar__toggle:is(:hover, :focus-visible, :active) {
+    color: var(--color-accent-pale);
+}
+
+.timeline__item:focus-within h3 {
+    color: var(--color-paper);
+}
+
+.timeline__item:focus-within p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline__item:focus-within .timeline__point::before {
+    background: var(--color-paper);
+    border-color: var(--color-paper);
+}
+
+.final-cta__button:focus-visible {
+    border-color: var(--color-paper);
+    background: var(--color-paper);
+    color: var(--color-ink);
+}
+
+/* Manrope for interface controls and display headings; body copy remains Inter. */
+button,
+.navbar__nav a,
+.navbar__cta,
+.mobile-menu__nav a,
+.mobile-menu__cta,
+.hero__button,
+.projects-intro__link,
+.project-showcase__link,
+.final-cta__button,
+.footer__column-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+.hero__title,
+.projects__title,
+.project-tile h3,
+.approach__title,
+.timeline__item h3,
+.about__title,
+.current__title,
+.current-card h3,
+.final-cta__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+.about__title,
+.current__title {
+    line-height: 1.02;
+}
+
+.navbar__cta,
+.hero__button,
+.final-cta__button,
+.round-link,
+.send-button,
+.slider-controls button,
+.references__controls button,
+.choice span {
+    border-style: solid;
+    background-clip: padding-box;
+}
