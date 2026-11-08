@@ -134,6 +134,72 @@
     initInertialScroll();
 
     /* =========================================
+       EDITORIAL SCROLL REVEALS
+    ========================================= */
+
+    function initScrollReveals() {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+        const targets = new Set();
+
+        function register(selector, type = 'text', stagger = 0) {
+            document.querySelectorAll(selector).forEach((element, index) => {
+                if (targets.has(element)) return;
+                targets.add(element);
+                element.dataset.scrollReveal = type;
+                if (stagger) {
+                    element.style.setProperty('--scroll-reveal-delay', `${Math.min(index, 5) * stagger}ms`);
+                }
+            });
+        }
+
+        register('.projects__header,.references__header,.approach__header,.approach__footer,.about__header,.about__content,.current__header,.current__footer,.final-cta__inner', 'text');
+        register('.project-tile,.current-card,.about-approach__step', 'card', 95);
+        register('.projects-intro__eyebrow,.projects-intro h1,.projects-intro__bottom,.project-showcase__meta,.project-showcase__bottom,.detail-intro,.project-slider,.project-film,.project-story,.page-cta,.about-manifesto>.section-kicker,.about-manifesto__content,.about-founder__content,.about-approach__heading,.about-page-cta>*,.news-page-hero__eyebrow,.news-page-hero h1,.news-page-hero__bottom,.news-feature__content,.news-archive__heading,.news-entry__body,.news-page-cta>*,.contact-heading .section-kicker,.contact-heading h1,.contact-lead,.contact-aside,.contact-form-area,.footer__top>*,.footer__bottom', 'text', 65);
+        register('.about-founder__portrait,.about__media,.news-feature__media,.news-entry__media,.media-frame', 'image', 45);
+
+        document.querySelectorAll('main img[loading="lazy"]').forEach((image) => {
+            if (image.closest('.project-tile,.current-card,.news-entry,.about-founder__portrait,.about__media,.news-feature__media,.news-entry__media,.media-frame,.reference-logo,.product-viewer-stage,.product-viewer-dialog')) return;
+            if (targets.has(image)) return;
+            targets.add(image);
+            image.dataset.scrollReveal = 'image';
+        });
+
+        if (!targets.size) return;
+
+        const observer = new IntersectionObserver((entries, instance) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-scroll-revealed');
+                instance.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+
+        targets.forEach((element) => {
+            if (element.matches('img') && !element.complete) {
+                element.addEventListener('load', () => observer.observe(element), { once: true });
+                element.addEventListener('error', () => element.classList.add('is-scroll-revealed'), { once: true });
+                return;
+            }
+            observer.observe(element);
+        });
+
+        document.addEventListener('focusin', (event) => {
+            const target = event.target.closest?.('[data-scroll-reveal]');
+            if (target) target.classList.add('is-scroll-revealed');
+        });
+
+        onMediaChange(reducedMotion, (event) => {
+            if (!event.matches) return;
+            targets.forEach((element) => element.classList.add('is-scroll-revealed'));
+            observer.disconnect();
+        });
+    }
+
+    initScrollReveals();
+
+    /* =========================================
        MOBILE MENU
     ========================================= */
 
